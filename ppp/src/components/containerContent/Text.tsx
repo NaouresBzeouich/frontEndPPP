@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box ,Grid } from '@mui/material';
 
 const textToType = `Discover our innovative platform where AI recommends photos based on your input.
 Elevate your visual experience with our advanced technology and curated image suggestions.`;
@@ -30,7 +30,9 @@ const TextContent: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ marginTop: '100px', textAlign: 'left' }}>
+    <Box sx={{  textAlign: 'left' }}>
+       <Grid container spacing={2}>
+       <Grid item xs={12} md={7}>
       <Typography
         variant="body1"
         component="div"
@@ -38,12 +40,34 @@ const TextContent: React.FC = () => {
           fontSize: '30px',
           fontWeight: 'bold',
           margin: '0 auto', 
-          maxWidth: { sm: '100%', md: '95%' }, // Adjust width based on screen size
+          maxWidth: { sm: '100%', md: '100%' }, 
+          marginLeft: '20px',
+          marginTop: '100px',
         }}
       >
+       
         {displayText}
         {showCursor && <span style={{ animation: 'blink-caret 1s step-end infinite' }}>|</span>}
-      </Typography>
+        </Typography>
+        </Grid>
+        <Grid item xs={12} md={5}>
+        <Box
+            component="img"
+            sx={{
+              width: '100%', 
+              maxWidth: { sm: '100%', md: '80%' }, 
+              height: 'auto', 
+              margin: '0 auto', 
+              display: 'block', 
+              marginTop: '50px',
+              borderRadius: '16px',
+            }}
+            src={`${process.env.PUBLIC_URL}/photo2.jpg`} // Update with your image file name
+            alt="Description of image"
+          />
+        </Grid>
+        </Grid>
+     
     </Box>
   );
 };
