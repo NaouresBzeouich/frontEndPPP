@@ -1,8 +1,8 @@
-import { alpha } from '@mui/material';
-import Box from '@mui/material/Box';
-import PhotoInsertPlace from '../containerContent/PhotoInsertPlace';
-import TextContent from '../containerContent/Text'; 
-import PhotosResult from '../containerContent/PhotosResult';
+import { alpha } from "@mui/material";
+import Box from "@mui/material/Box";
+import PhotoInsertPlace from "../containerContent/PhotoInsertPlace";
+import TextContent from "../containerContent/Text";
+import PhotosResult from "../containerContent/PhotosResult";
 
 interface BodyContainerProps {
   text: string;
@@ -12,11 +12,11 @@ interface BodyContainerProps {
 const BodyContainer: React.FC<BodyContainerProps> = ({ text, onUpload }) => {
   const renderContent = () => {
     switch (text.toLowerCase()) {
-      case 'start now':
+      case "start now":
         return <TextContent />;
-      case 'see the result':
+      case "see the result":
         return <PhotoInsertPlace onUpload={onUpload} />;
-      case 'retry':
+      case "retry":
         return <PhotosResult />;
       default:
         return <TextContent />;
@@ -28,29 +28,29 @@ const BodyContainer: React.FC<BodyContainerProps> = ({ text, onUpload }) => {
       id="image"
       sx={(theme) => ({
         mt: { xs: 8, sm: 10 },
-        alignSelf: 'center',
+        alignSelf: "center",
         height: { xs: 200, sm: 700 },
-        width: '100%',
+        width: "100%",
         backgroundImage:
-          theme.palette.mode === 'light'
+          theme.palette.mode === "light"
             ? 'url("/static/images/templates/templates-images/hero-light.png")'
             : 'url("/static/images/templates/templates-images/hero-dark.png")',
-        backgroundSize: 'cover',
-        borderRadius: '10px',
-        outline: '1px solid',
+        backgroundSize: "cover",
+        borderRadius: "10px",
+        outline: "1px solid",
         outlineColor:
-          theme.palette.mode === 'light'
-            ? alpha('#BFCCD9', 0.5)
-            : alpha('#9CCCFC', 0.1),
+          theme.palette.mode === "light"
+            ? alpha("#BFCCD9", 0.5)
+            : alpha("#9CCCFC", 0.1),
         boxShadow:
-          theme.palette.mode === 'light'
-            ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
-            : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
+          theme.palette.mode === "light"
+            ? `0 0 12px 8px ${alpha("#9CCCFC", 0.2)}`
+            : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
       })}
     >
       {renderContent()}
     </Box>
   );
-}
+};
 
 export default BodyContainer;

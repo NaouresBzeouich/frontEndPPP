@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { alpha, Box, Container, Stack } from '@mui/material';
-import Title from '../bodyParts/Title';
-import Btn from '../bodyParts/Btn';
-import BodyContainer from '../bodyParts/Container';
+import * as React from "react";
+import { alpha, Box, Container, Stack } from "@mui/material";
+import Title from "../bodyParts/Title";
+import Btn from "../bodyParts/Btn";
+import BodyContainer from "../bodyParts/Container";
 
 const Body: React.FC = () => {
   const [step, setStep] = React.useState<number>(0);
@@ -15,13 +15,13 @@ const Body: React.FC = () => {
   const getButtonLabel = () => {
     switch (step) {
       case 0:
-        return 'Start Now';
+        return "Start Now";
       case 1:
-        return 'See the Result';
+        return "See the Result";
       case 2:
-        return 'retry';
+        return "retry";
       default:
-        return 'Start Now';
+        return "Start Now";
     }
   };
 
@@ -33,33 +33,33 @@ const Body: React.FC = () => {
     <Box
       id="Body"
       sx={(theme) => ({
-        width: '100%',
+        width: "100%",
         backgroundImage:
-          theme.palette.mode === 'light'
-            ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-            : `linear-gradient(#02294F, ${alpha('#090E10', 0.0)})`,
-        backgroundSize: '100% 20%',
-        backgroundRepeat: 'no-repeat',
+          theme.palette.mode === "light"
+            ? "linear-gradient(180deg, #CEE5FD, #FFF)"
+            : `linear-gradient(#02294F, ${alpha("#090E10", 0.0)})`,
+        backgroundSize: "100% 20%",
+        backgroundRepeat: "no-repeat",
       })}
     >
       <Container
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           pt: { xs: 14, sm: 20 },
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+        <Stack spacing={2} useFlexGap sx={{ width: { xs: "100%", sm: "70%" } }}>
           <Title />
-          
+
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
+            direction={{ xs: "column", sm: "row" }}
             alignSelf="center"
             spacing={1}
             useFlexGap
-            sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
+            sx={{ pt: 2, width: { xs: "100%", sm: "auto" } }}
           >
             <Btn text={getButtonLabel()} onClick={handleButtonClick} />
           </Stack>
@@ -68,6 +68,6 @@ const Body: React.FC = () => {
       </Container>
     </Box>
   );
-}
+};
 
 export default Body;

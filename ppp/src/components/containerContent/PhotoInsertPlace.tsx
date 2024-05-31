@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import React, { useState, useEffect } from "react";
+import { Box, Typography, Button } from "@mui/material";
 
 interface PhotoInsertPlaceProps {
   onUpload: (imageData: string) => void;
@@ -9,7 +9,7 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = ({ onUpload }) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    const storedImage = localStorage.getItem('selectedImage');
+    const storedImage = localStorage.getItem("selectedImage");
     if (storedImage) {
       setSelectedImage(storedImage);
     }
@@ -22,7 +22,7 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = ({ onUpload }) => {
         if (reader.result) {
           const imageData = reader.result.toString();
           setSelectedImage(imageData);
-          localStorage.setItem('selectedImage', imageData);
+          localStorage.setItem("selectedImage", imageData);
           onUpload(imageData);
         }
       };
@@ -31,15 +31,19 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = ({ onUpload }) => {
   };
 
   return (
-    <Box sx={{
-      margin: '0 auto', 
-      maxWidth: { sm: '100%', md: '100%' }, 
-      marginLeft: '20px',
-      marginTop: '50px',
-      textAlign: 'center',
-    }}>
+    <Box
+      sx={{
+        margin: "0 auto",
+        maxWidth: { sm: "100%", md: "100%" },
+        marginLeft: "20px",
+        marginTop: "50px",
+        textAlign: "center",
+      }}
+    >
       <Typography variant="h6" sx={{ marginBottom: 2 }}>
-        {selectedImage ? 'Choose another image if you like' : 'First, choose an image'}
+        {selectedImage
+          ? "Choose another image if you like"
+          : "First, choose an image"}
       </Typography>
       <label htmlFor="file-upload">
         <Box
@@ -47,12 +51,12 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = ({ onUpload }) => {
           src={selectedImage || `${process.env.PUBLIC_URL}/addImage.jpg`}
           alt={selectedImage ? "Selected Photo" : "Add"}
           sx={{
-            cursor: 'pointer',
-            borderRadius: '16px',
-            maxWidth: { xs: '100%', sm: '300px', md: '400px' },
-            maxHeight: { xs: '200px', sm: '300px', md: '400px' },
-            objectFit: 'cover',
-            border: '2px solid #ccc',
+            cursor: "pointer",
+            borderRadius: "16px",
+            maxWidth: { xs: "100%", sm: "300px", md: "400px" },
+            maxHeight: { xs: "200px", sm: "300px", md: "400px" },
+            objectFit: "cover",
+            border: "2px solid #ccc",
           }}
         />
       </label>
@@ -61,7 +65,7 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = ({ onUpload }) => {
         type="file"
         accept="image/*"
         onChange={handleImageChange}
-        style={{ display: 'none' }}
+        style={{ display: "none" }}
       />
     </Box>
   );
