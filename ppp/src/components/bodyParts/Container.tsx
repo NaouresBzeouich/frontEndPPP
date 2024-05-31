@@ -1,8 +1,27 @@
 import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
 import PhotoInsertPlace from '../containerContent/PhotoInsertPlace';
-import TextContent from '../containerContent/Text'
-export default function BodyContainer(){
+import TextContent from '../containerContent/Text'; 
+import { InsertCommentOutlined } from '@mui/icons-material';
+import PhotosResult from '../containerContent/PhotosResult';
+
+interface BodyContainerProps {
+  text: string;
+}
+
+const BodyContainer: React.FC<BodyContainerProps> = ({ text }) => {
+  const renderContent = () => {
+    switch (text.toLowerCase()) {
+      case 'start now':
+        return <TextContent />;
+      case 'see the result':
+        return <PhotoInsertPlace/>;
+      case 'view image results':
+        return <PhotosResult />;
+      default:
+        return <TextContent />;
+    }
+  };
     return (
         <Box
           id="image"
@@ -28,7 +47,9 @@ export default function BodyContainer(){
                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
           })}
         >
-            <TextContent />
+          {renderContent()}
             </Box>
     )
 }
+
+export default BodyContainer ; 

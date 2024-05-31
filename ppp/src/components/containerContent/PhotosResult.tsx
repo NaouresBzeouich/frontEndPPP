@@ -1,4 +1,4 @@
 
 export default function PhotosResult(){
-    return <></>; 
+    return <>here's Photo result </>; 
 }

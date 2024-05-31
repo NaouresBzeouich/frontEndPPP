@@ -8,9 +8,29 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import {SparklesCore} from '../ui/Sparkles'; 
 import Title from '../bodyParts/Title'; 
-import StartBtn from '../bodyParts/Btn';
+import Btn from '../bodyParts/Btn';
 import BodyContainer from '../bodyParts/Container';
-export default function Body() {
+
+const Body = () => {
+  const [step, setStep] = React.useState<number>(0);
+
+  const handleButtonClick = () => {
+    setStep((prevStep) => (prevStep + 1) % 3); // Reset to 0 after the third step
+  };
+
+  const getButtonLabel = () => {
+    switch (step) {
+      case 0:
+        return 'Start Now';
+      case 1:
+        return 'See the Result';
+      case 2:
+        return 'View Image Results';
+      default:
+        return 'Start Now';
+    }
+  };
+
   return (
     <Box
       id="Body"
@@ -43,12 +63,14 @@ export default function Body() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-           <StartBtn />
+           <Btn text={getButtonLabel()} onClick={handleButtonClick} />
           </Stack>
           
         </Stack>
-        <BodyContainer />
+        <BodyContainer text={getButtonLabel()} />
       </Container>
     </Box>
   );
 }
+
+export default Body ; 

@@ -1,9 +1,17 @@
+import React from 'react';
 import Button from '@mui/material/Button';
 
-export default function StartBtn(){
-    return (
-        <Button variant="contained" color="primary">
-              Start now
-            </Button>
-    );
+interface StartBtnProps {
+  text: string;
+  onClick: () => void;
 }
+
+const StartBtn: React.FC<StartBtnProps> = ({ text, onClick }) => {
+  return (
+    <Button variant="contained" color="primary" onClick={onClick}>
+      {text}
+    </Button>
+  );
+};
+
+export default StartBtn;
