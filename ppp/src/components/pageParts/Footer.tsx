@@ -1,23 +1,18 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+  width: "140px",
+  height: "auto",
 };
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
+      {"Copyright © "}
       <Link href="https://mui.com/">Sitemark&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
@@ -28,39 +23,39 @@ export default function Footer() {
   return (
     <Container
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
         gap: { xs: 4, sm: 8 },
         py: { xs: 8, sm: 10 },
-        textAlign: { sm: 'center', md: 'left' },
+        textAlign: { sm: "center", md: "left" },
       }}
     >
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          width: '100%',
-          justifyContent: 'space-between',
-          borderTop: '1px solid',
-          borderColor: 'divider',
+          display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
+          width: "100%",
+          justifyContent: "space-between",
+          borderTop: "1px solid",
+          borderColor: "divider",
         }}
       >
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
+            display: "flex",
+            flexDirection: "column",
             gap: 1,
           }}
         >
-              <Typography variant="body2" fontWeight={600}>
-             This project was created by: 
+          <Typography variant="body2" fontWeight={600}>
+            This project was created by:
           </Typography>
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
             gap: 1,
           }}
         >
@@ -70,30 +65,30 @@ export default function Footer() {
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
             gap: 1,
           }}
         >
           <Link color="text.secondary" href="#">
-            Mejdi Cyrine
+            Mejri Cyrine
           </Link>
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
             gap: 1,
           }}
         >
           <Link color="text.secondary" href="#">
-            oumaimaa
+            Elfidha Oumayma
           </Link>
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
             gap: 1,
           }}
         >
@@ -103,13 +98,13 @@ export default function Footer() {
         </Box>
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            flexDirection: 'column',
+            display: { xs: "none", sm: "flex" },
+            flexDirection: "column",
             gap: 1,
           }}
         >
           <Link color="text.secondary" href="#">
-            Neji Mohamed Anas
+            Mohamed Anas Boukchina
           </Link>
         </Box>
       </Box>
