@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Box, Typography, Button } from '@mui/material';
 
 interface PhotoInsertPlaceProps {}
 
@@ -18,23 +19,43 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = () => {
   };
 
   return (
-    <div className="photo-insert-place">
-      {selectedImage ? (
-        <img src={selectedImage} alt="Selected Photo" />
-      ) : (
-        <div className="placeholder">
-          <label htmlFor="photo-input">
-            Drag and drop your photo here or click to browse
-          </label>
-          <input
-            type="file"
-            id="photo-input"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
-        </div>
-      )}
-    </div>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        margin: '0 auto',
+        marginTop: '50px',
+        textAlign: 'center',
+        gap: 2,
+      }}
+    >
+      <Typography variant="h6" sx={{ marginBottom: 2 }}>
+        {selectedImage ? 'Choose another image if you like' : 'First, choose an image'}
+      </Typography>
+      <label htmlFor="file-upload">
+        <Box
+          component="img"
+          src={selectedImage || `${process.env.PUBLIC_URL}/addImage.jpg`}
+          alt={selectedImage ? "Selected Photo" : "Add"}
+          sx={{
+            cursor: 'pointer',
+            borderRadius: '16px',
+            maxWidth: { xs: '100%', sm: '300px', md: '600px' },
+            maxHeight: { xs: '200px', sm: '300px', md: '400px' },
+            objectFit: 'cover',
+            border: '2px solid #ccc',
+          }}
+        />
+      </label>
+      <input
+        id="file-upload"
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        style={{ display: 'none' }}
+      />
+    </Box>
   );
 };
 
