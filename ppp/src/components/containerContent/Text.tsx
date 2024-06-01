@@ -41,8 +41,9 @@ const TextContent: React.FC = () => {
           fontWeight: 'bold',
           margin: '0 auto', 
           maxWidth: { sm: '100%', md: '100%' }, 
-          marginLeft: '20px',
+          marginLeft: '30px',
           marginTop: '100px',
+          fontFamily: 'cursive',
         }}
       >
        

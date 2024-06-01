@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography , useTheme } from '@mui/material';
 import { SparklesCore } from '../ui/Sparkles';
+import { alpha } from "@mui/material";
+
 
 interface SparklesEffectProps {
   particleColor?: string;
@@ -52,11 +54,17 @@ const Title: React.FC = () => {
     >
       <Typography
         variant="h1"
-        sx={{
+        sx={(theme) => ({
           flexDirection: { xs: 'column', md: 'row' },
           alignSelf: 'center',
           textAlign: 'center',
-                }}
+          fontFamily: 'serif',
+          fontSize: '65px',
+          textShadow: 
+          theme.palette.mode === "light"
+          ? `1px 1px 2px black, 0 0 1em royalblue, 0 0 0.2em royalblue`
+          :`1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue`,
+                })}
       >
         SnapShop:&nbsp;
         <Typography
