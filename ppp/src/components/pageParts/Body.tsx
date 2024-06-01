@@ -9,6 +9,10 @@ const Body: React.FC = () => {
   const [uploadedImage, setUploadedImage] = React.useState<string | null>(null);
 
   const handleButtonClick = () => {
+    if (step === 0) {
+      setUploadedImage(null);
+      localStorage.removeItem("selectedImage");
+    }
     setStep((prevStep) => (prevStep + 1) % 3); // Reset to 0 after the third step
   };
 
@@ -28,6 +32,7 @@ const Body: React.FC = () => {
   const handleImageUpload = (imageData: string) => {
     setUploadedImage(imageData);
   };
+
 
   return (
     <Box
@@ -64,7 +69,7 @@ const Body: React.FC = () => {
             <Btn text={getButtonLabel()} onClick={handleButtonClick} />
           </Stack>
         </Stack>
-        <BodyContainer text={getButtonLabel()} onUpload={handleImageUpload} />
+        <BodyContainer text={getButtonLabel()} onUpload={handleImageUpload}  clearImage={step === 0}/>
       </Container>
     </Box>
   );

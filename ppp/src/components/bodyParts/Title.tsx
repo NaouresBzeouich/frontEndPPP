@@ -27,13 +27,13 @@ const SparklesEffect: React.FC<SparklesEffectProps> = ({ particleColor }) => {
         <SparklesCore
           background="transparent"
           minSize={0.4}
-          maxSize={1}
+          maxSize={2}
           particleDensity={200}
           className="w-full h-full"
           particleColor={
             particleColor ||
             (theme.palette.mode === 'light'
-              ? theme.palette.primary.main
+              ? theme.palette.primary.dark
               : theme.palette.primary.light) }
         
           />
@@ -63,7 +63,7 @@ const Title: React.FC = () => {
           textShadow: 
           theme.palette.mode === "light"
           ? `1px 1px 2px black, 0 0 1em royalblue, 0 0 0.2em royalblue`
-          :`1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue`,
+          :`1px 1px 2px maroon, 0 0 1em blue, 0 0 0.2em blue`,
                 })}
       >
         SnapShop:&nbsp;

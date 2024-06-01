@@ -1,4 +1,5 @@
 import { alpha } from "@mui/material";
+import React from "react"; 
 import Box from "@mui/material/Box";
 import PhotoInsertPlace from "../containerContent/PhotoInsertPlace";
 import TextContent from "../containerContent/Text";
@@ -7,9 +8,17 @@ import PhotosResult from "../containerContent/PhotosResult";
 interface BodyContainerProps {
   text: string;
   onUpload: (imageData: string) => void;
+  clearImage: boolean;
 }
 
-const BodyContainer: React.FC<BodyContainerProps> = ({ text, onUpload }) => {
+const BodyContainer: React.FC<BodyContainerProps> = ({ text, onUpload, clearImage }) => {
+  
+  React.useEffect(() => {
+    if (clearImage) {
+      localStorage.removeItem("selectedImage");
+    }
+  }, [clearImage]);
+
   const renderContent = () => {
     switch (text.toLowerCase()) {
       case "start now":
