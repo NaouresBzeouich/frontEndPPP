@@ -12,12 +12,11 @@ interface BodyContainerProps {
 }
 
 const BodyContainer: React.FC<BodyContainerProps> = ({ text, onUpload, clearImage }) => {
-  
   React.useEffect(() => {
-    if (clearImage) {
+   if (clearImage) {
       localStorage.removeItem("selectedImage");
     }
-  }, [clearImage]);
+  }, [clearImage]);;
 
   const renderContent = () => {
     switch (text.toLowerCase()) {

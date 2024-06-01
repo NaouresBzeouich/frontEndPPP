@@ -12,13 +12,22 @@ const StartBtn: React.FC<StartBtnProps> = ({ text, onClick }) => {
   return (
     <Box
       sx={(theme) => ({
+        backgroundColor:theme.palette.mode === "light"
+        ? 'white'
+        : 'gainsboro', 
+        borderRadius: "10px",
+        outline: "1px solid",
+        outlineColor:
+          theme.palette.mode === "light"
+            ? alpha("#BFCCD9", 1)
+            : alpha("#9CCCFC", 1),
         boxShadow:
           theme.palette.mode === "light"
-            ? `0 0 12px 8px ${alpha("#9CCCFC", 0.2)}`
-            : `0 0 24px 12px ${alpha("#033363", 0.2)}`,
+            ? `0 0 24px 1px ${alpha("#9CCCFC", 1)}`
+            : `0 0 24px 1px ${alpha("#033363", 1)}`,
       })}
     >
-      <Button variant="contained" size="large" onClick={onClick}>
+      <Button variant="text" size="large" onClick={onClick}>
         <Typography variant="h5">{text}</Typography>
       </Button>
     </Box>

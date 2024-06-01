@@ -4,6 +4,20 @@ import { Box } from "@mui/material";
 const PhotosResult: React.FC = () => {
   const [imagePath, setImagePath] = useState<string | null>(null);
 
+  // List of recommended images
+  const recommendedImages = [
+    "/recommendedImages/image1.jpg",
+    "/recommendedImages/image2.jpg",
+    "/recommendedImages/image3.jpg",
+    "/recommendedImages/image4.jpg",
+    "/recommendedImages/image5.jpg",
+    "/recommendedImages/image6.jpg",
+    "/recommendedImages/image7.jpg",
+    "/recommendedImages/image8.jpg",
+    "/recommendedImages/image9.jpg",
+    "/recommendedImages/image10.jpg",
+  ];
+
   useEffect(() => {
     const storedImage = localStorage.getItem("selectedImage");
     if (storedImage) {
@@ -12,19 +26,38 @@ const PhotosResult: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ textAlign: "center", marginTop: "50px" ,marginBottom: "50px",}}>
+    <Box sx={{ textAlign: "center", marginTop: "50px", marginBottom: "50px" }}>
       {imagePath ? (
-        <Box
-          component="img"
-          src={imagePath}
-          alt="Uploaded Image"
-          sx={{
-            maxWidth: "100%",
-            maxHeight: "400px",
-            borderRadius: "16px",
-            border: "2px solid #ccc",
-          }}
-        />
+        <>
+          <Box
+            component="img"
+            src={imagePath}
+            alt="Uploaded Image"
+            sx={{
+              maxWidth: "100%",
+              maxHeight: "400px",
+              borderRadius: "16px",
+              border: "2px solid #ccc",
+              marginBottom: "20px", 
+            }}
+          />
+          <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "20px" }}>
+            {recommendedImages.map((img, index) => (
+              <Box
+                key={index}
+                component="img"
+                src={img}
+                alt={`Recommended ${index}`}
+                sx={{
+                  maxWidth: "200px",
+                  maxHeight: "200px",
+                  borderRadius: "16px",
+                  border: "2px solid #ccc",
+                }}
+              />
+            ))}
+          </Box>
+        </>
       ) : (
         <p>No image uploaded yet.</p>
       )}
@@ -33,3 +66,4 @@ const PhotosResult: React.FC = () => {
 };
 
 export default PhotosResult;
+
