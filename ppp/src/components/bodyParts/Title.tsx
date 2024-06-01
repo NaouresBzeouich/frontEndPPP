@@ -46,6 +46,8 @@ const Title: React.FC = () => {
       sx={{
         flexDirection: 'column',
         alignItems: 'center',
+        pt: { xs: 4, sm: 8 }, // Increased top padding
+        pb: { xs: 5, sm: 10 },
       }}
     >
       <Typography
@@ -54,24 +56,21 @@ const Title: React.FC = () => {
           flexDirection: { xs: 'column', md: 'row' },
           alignSelf: 'center',
           textAlign: 'center',
-          fontSize: 'clamp(4rem, 15vw, 6rem)',
-        }}
+                }}
       >
-        Our latest&nbsp;
+        SnapShop:&nbsp;
         <Typography
           component="span"
           variant="h1"
           sx={{
-            fontSize: 'clamp(4rem, 15vw, 6rem)',
             color: (theme) =>
               theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
           }}
         >
-          products
+          Find your product
         </Typography>
       </Typography>
 
-      {/* Include SparklesEffect component here */}
       <SparklesEffect />
     </Box>
   );
