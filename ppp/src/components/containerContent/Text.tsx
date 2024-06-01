@@ -60,6 +60,7 @@ const TextContent: React.FC = () => {
               margin: '0 auto', 
               display: 'block', 
               marginTop: '50px',
+              marginBottom: '50px',
               borderRadius: '16px',
             }}
             src={`${process.env.PUBLIC_URL}/photo2.jpg`} // Update with your image file name

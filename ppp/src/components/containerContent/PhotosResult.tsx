@@ -12,7 +12,7 @@ const PhotosResult: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={{ textAlign: "center", marginTop: "50px" }}>
+    <Box sx={{ textAlign: "center", marginTop: "50px" ,marginBottom: "50px",}}>
       {imagePath ? (
         <Box
           component="img"

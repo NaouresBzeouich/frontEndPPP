@@ -37,6 +37,7 @@ const PhotoInsertPlace: React.FC<PhotoInsertPlaceProps> = ({ onUpload }) => {
         maxWidth: { sm: "100%", md: "100%" },
         marginLeft: "20px",
         marginTop: "50px",
+        marginBottom: "50px",
         textAlign: "center",
       }}
     >
