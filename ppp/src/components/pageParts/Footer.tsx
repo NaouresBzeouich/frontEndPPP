@@ -41,53 +41,11 @@ export default function Footer() {
           borderColor: "divider",
         }}
       >
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
-            gap: 2,
-          }}
-        >
           <Typography variant="body2" fontWeight={600}>
             <p className="copyright">
               © Copyright <b>2024</b> Designed & Built by <b>SnapShot</b>
             </p>
           </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 1,
-          }}
-        >
-          <Typography variant="body2" fontWeight={600}>
-            This project was created by:
-          </Typography>
-          <Link color="text.secondary" href="#">
-            Bzeuich Naoures
-          </Link>
-          <Link color="text.secondary" href="#">
-            Mejri Cyrine
-          </Link>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: "none", sm: "flex" },
-            flexDirection: "column",
-            gap: 1,
-          }}
-        >
-          <Link color="text.secondary" href="#">
-            Elfidha Oumayma
-          </Link>
-          <Link color="text.secondary" href="#">
-            Ayadi Nassime
-          </Link>
-          <Link color="text.secondary" href="#">
-            Mohamed Anas Boukchina
-          </Link>
-        </Box>
         
       </Box>
       <Divider />
