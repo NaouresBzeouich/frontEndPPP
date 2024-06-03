@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Box ,Grid } from '@mui/material';
 
-const textToType = `Discover our innovative platform where AI recommends photos based on your input.
-Elevate your visual experience with our advanced technology and curated image suggestions.`;
+const textToType = `Discover fashion like never before with our advanced image processing and deep learning algorithms, delivering a list of similar products that perfectly match your style.`;
 
 const TextContent: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
