@@ -3,26 +3,23 @@ import { Box } from "@mui/material";
 
 const PhotosResult: React.FC = () => {
   const [imagePath, setImagePath] = useState<string | null>(null);
-
-  // List of recommended images
-  const recommendedImages = [
-    "/recommendedImages/image1.jpg",
-    "/recommendedImages/image2.jpg",
-    "/recommendedImages/image3.jpg",
-    "/recommendedImages/image4.jpg",
-    "/recommendedImages/image5.jpg",
-    "/recommendedImages/image6.jpg",
-    "/recommendedImages/image7.jpg",
-    "/recommendedImages/image8.jpg",
-    "/recommendedImages/image9.jpg",
-    "/recommendedImages/image10.jpg",
-  ];
+  const [recommendedImages, setRecommendedImages] = useState<string[]>([]);
 
   useEffect(() => {
     const storedImage = localStorage.getItem("selectedImage");
     if (storedImage) {
       setImagePath(storedImage);
     }
+
+    // Fetch recommended images from the JSON endpoint
+    fetch('/RecommendedImages/recommendations.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data.recommendations) {
+          setRecommendedImages(data.recommendations);
+        }
+      })
+      .catch(error => console.error("Error fetching recommended images:", error));
   }, []);
 
   return (
@@ -66,4 +63,3 @@ const PhotosResult: React.FC = () => {
 };
 
 export default PhotosResult;
-
